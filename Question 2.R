@@ -9,3 +9,26 @@
 #   b. Using R, tabulate and graph the relationship between the applicant’s undergraduate degree
 # and the university that applied to.
 # c. Is the undergraduate degree and the university each person applied to appear to be related?
+
+#comment out if not mac and point to directory
+setwd("~/Documents/Adv Stat/Assignments")
+
+#Load up MBA.rds data into the R data frame
+MBA<- readRDS("MBA.rds")
+
+#Add two new features to the data frame:MBA
+MBA$Degreelabel <- factor(MBA$Degree,
+                                  levels=c(1,2,3,4),
+                                  labels=c("BA",
+                                           "B.Eng",
+                                           "BBA",
+                                           "Other"))
+levels(MBA$Degreelabel)
+
+MBA$Universitylabel<- factor(MBA$University,
+                                 levels=c(1,2,3,4),
+                                 labels=c("G&M",
+                                          "Post",
+                                          "Star",
+                                          "Sun")) 
+levels(newsread$Newspaperlabel)
